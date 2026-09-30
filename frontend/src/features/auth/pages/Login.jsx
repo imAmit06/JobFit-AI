@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router";
 import "../auth.form.scss";
 import { useAuth } from "../hooks/useAuth";
+import Loading from "../components/Loading";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -17,12 +18,7 @@ const Login = () => {
   };
 
   if (loading) {
-    return (
-      <main className="loading-screen">
-        <div className="loader"></div>
-        <p>Loading...</p>
-      </main>
-    );
+    return <Loading />;
   }
 
   return (

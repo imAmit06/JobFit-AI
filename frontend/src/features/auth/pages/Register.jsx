@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router";
 import { useAuth } from "../hooks/useAuth";
+import Loading from "../components/Loading";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -17,12 +18,7 @@ const Register = () => {
   };
 
   if (loading) {
-    return (
-      <main className="loading-screen">
-        <div className="loader"></div>
-        <p>Loading...</p>
-      </main>
-    );
+    return <Loading />;
   }
 
   return (
